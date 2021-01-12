@@ -1,4 +1,5 @@
 import numpy
+
 print("STONKS CALCULATOR")
 x = float(input("masukan modal: "))
 b1 = float(input("masukan jumlah persen yang diinginkan (%): "))
