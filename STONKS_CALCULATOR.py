@@ -1,32 +1,38 @@
 from numpy import arange
 import sys
-import re
 
 print("STONKS CALCULATOR")
+error = "Please input the correct value (number only)"
 
-x = (input("masukan modal: "))
+def value_checker1(self):
+    try:
+        float(x)
+    except ValueError:
+        print(error)
+        sys.exit()
 
-try:
-    float(x)
-except ValueError:
-    print("yang dimasukin angka tolol bukan lu?")
-    sys.exit()
+def value_checker2(self):
+    try:
+        float(b1)
+    except ValueError:
+        print(error)
+        sys.exit()
 
-b1 = (input("masukan jumlah persen yang diinginkan (%): "))
+def value_checker3(self):
+    try:
+        float(limit_max)
+    except ValueError:
+        print(error)
+        sys.exit()
 
-try:
-    float(b1)
-except ValueError:
-    print("yang dimasukin angka tolol bukan lu?")
-    sys.exit()
+x = (input("Your initial asset : "))
+value_checker1(x)
 
-limit_max = (input("masukan jumlah hari yang diinginkan: "))
+b1 = (input("Expected profit percentage (%) for each trades: "))
+value_checker2(b1)
 
-try:
-    float(limit_max)
-except ValueError:
-    print("yang dimasukin angka tolol bukan lu?")
-    sys.exit()
+limit_max = (input("The amount of trades you will made this month: "))
+value_checker3(limit_max)
 
 x = float(x)
 b1 = float(b1)
@@ -43,4 +49,8 @@ for total in arange(limit_min, limit_max, step):
     x = total
     z = x * (b1 / b2)
     a += 1
-    print(total)
+    print("Compound interest after each trades: ", total)
+
+str(limit_max)
+
+print("Your stonks after ", limit_max,"amount of trades are:", total)
